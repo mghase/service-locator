@@ -51,7 +51,7 @@ var serviceLength =0;
 async function renderService() {
     var template=$('#template').html();
     Mustache.parse(template);
-    var render = Mustache.render(template, {partArray});
+    var render = Mustache.render(template, {serviceArray});
     $('#service-lists').html(render);
     partTotal = await callStatic('sLength', [])
     $('#total').html(serviceLength);
@@ -74,8 +74,6 @@ async function contractCall(func, args,value) {
 
     return calledGet;
   }
-
-
 
 window.addEventListener('load',async () =>{
     $('#loading').show();
