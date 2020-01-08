@@ -1,0 +1,197 @@
+contract CityServiceContract=
+
+  record service = {
+         index               : int,
+         sAddress            : address,
+         sName               : string,
+         sLocation           : string,
+         mapUrl              : string
+         
+         }
+   
+   
+  record state ={
+          services : map(int, service),
+          sLength : int
+          }
+  
+  entrypoint init() = {
+        services = {},
+        sLength = 0 
+        }
+  
+  stateful entrypoint storeService(name : string, loc :string, url :string) =
+        let service ={
+            index       = sLength() +1,
+            sAddress = Call.caller,
+            sName       = name,
+            sLocation   = loc,
+            mapUrl      = url
+           
+            }
+        
+        let index = sLength() +1
+        
+        put( state { services[index] = service, sLength = index})
+        
+        
+        
+        
+  entrypoint getService(index :int ) :service =
+    state.services[index]
+    
+    
+  entrypoint sLength() : int =
+        state.sLength
+        
+        
+        
+        
+        contract CityServiceContract=
+
+  record service = {
+         index               : int,
+         sAddress            : address,
+         sName               : string,
+         sLocation           : string,
+         mapUrl              : string
+         
+         }
+   
+   
+  record state ={
+          services : map(int, service),
+          sLength : int
+          }
+  
+  entrypoint init() = {
+        services = {},
+        sLength = 0 
+        }
+  
+  stateful entrypoint storeService(name : string, loc :string, url :string) =
+        let service ={
+            index       = sLength() +1,
+            sAddress = Call.caller,
+            sName       = name,
+            sLocation   = loc,
+            mapUrl      = url
+           
+            }
+        
+        let index = sLength() +1
+        
+        put( state { services[index] = service, sLength = index})
+        
+        
+        
+        
+  entrypoint getService(index :int ) :service =
+    state.services[index]
+    
+    
+  entrypoint sLength() : int =
+        state.sLength
+        
+        
+        
+        
+        contract CityServiceContract=
+
+  record service = {
+         index               : int,
+         sAddress            : address,
+         sName               : string,
+         sLocation           : string,
+         mapUrl              : string
+         
+         }
+   
+   
+  record state ={
+          services : map(int, service),
+          sLength : int
+          }
+  
+  entrypoint init() = {
+        services = {},
+        sLength = 0 
+        }
+  
+  stateful entrypoint storeService(name : string, loc :string, url :string) =
+        let service ={
+            index       = sLength() +1,
+            sAddress = Call.caller,
+            sName       = name,
+            sLocation   = loc,
+            mapUrl      = url
+           
+            }
+        
+        let index = sLength() +1
+        
+        put( state { services[index] = service, sLength = index})
+        
+        
+        
+        
+  entrypoint getService(index :int ) :service =
+    state.services[index]
+    
+    
+  entrypoint sLength() : int =
+        state.sLength
+        
+        
+        
+        
+        contract CityServiceContract=
+
+  record service = {
+         index               : int,
+         sAddress            : address,
+         sName               : string,
+         sLocation           : string,
+         mapUrl              : string
+         
+         }
+   
+   
+  record state ={
+          services : map(int, service),
+          sLength : int
+          }
+  
+  entrypoint init() = {
+        services = {},
+        sLength = 0 
+        }
+  
+  stateful entrypoint storeService(name : string, loc :string, url :string) =
+        let service ={
+            index       = sLength() +1,
+            sAddress = Call.caller,
+            sName       = name,
+            sLocation   = loc,
+            mapUrl      = url
+           
+            }
+        
+        let index = sLength() +1
+        
+        put( state { services[index] = service, sLength = index})
+        
+        
+        
+        
+  entrypoint getService(index :int ) :service =
+    state.services[index]
+    
+    
+  entrypoint sLength() : int =
+        state.sLength
+        
+        
+        
+        
+        

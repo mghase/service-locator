@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Service Locator registration</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body{
+        background-color:#000;
+    }
+    .modal-h{
+         background-color:#000;
+         color:#fff;
+    }
+    .white-c{
+       color:#fff;  
+    }
+    </style>
+    </head>
+  <body>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <a class="navbar-brand" href="#"><i class="fa  fa-map-marker" aria-hidden="true"></i>  CSL</a>
+          <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                      <span class="nav-link">Service Locator <span class="sr-only">(current)</span></span>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#" data-toggle="modal" data-target="#rModal"><i class="fa fa-plus-circle" aria-hidden="true"></i>REGISTER NEW SERVICE LOCATOR</a>
+                  </li>
+                 
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+          </div>
+      </nav>
+      <div id="Loading" style="text-align: center;">
+          <img src="resources/images/loading.svg" alt="">
+          <div><b>Please Wai...</b></div>
+      </div>
+      <div class="row">
+
+<div class="col-md-12 p-3">
+ <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle" aria-hidden="true"></i>REGISTER NEW SERVICE</button>
+                 
+</div>
+
+<div class="col-12">
+<div class="card-columns " id="service-lists">
+    <div class="card">
+        <img class="card-img-top" src="holder.js/100x180/" alt="">
+        <div class="card-body">
+            <h4 class="card-title">University of Dodoma</h4>
+            <p class="card-text">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3420547623155!2d35.79969531464801!3d-6.218544662638076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184dfb0bcbd64cab%3A0x6f07a91fa266fdac!2sUniversity%20Of%20Dodoma%20(UDOM)!5e0!3m2!1sen!2sus!4v1578415318081!5m2!1sen!2sus" width="100%%" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="holder.js/100x180/" alt="">
+        <div class="card-body">
+            <h4 class="card-title">Dodoma General Hospital</h4>
+            <p class="card-text">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6147581083555!2d35.7422349146478!3d-6.1822861622972365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184de5576ca8c51d%3A0x498951ebfb7c228c!2sDodoma%20General%20Hospital!5e0!3m2!1sen!2sus!4v1578414484153!5m2!1sen!2sus" width="100%%" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </p>
+        </div>
+    </div>
+      <div class="card">
+        <img class="card-img-top" src="holder.js/100x180/" alt="">
+        <div class="card-body">
+            <h4 class="card-title">Dodoma General Hospital</h4>
+            <p class="card-text">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6147581083555!2d35.7422349146478!3d-6.1822861622972365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184de5576ca8c51d%3A0x498951ebfb7c228c!2sDodoma%20General%20Hospital!5e0!3m2!1sen!2sus!4v1578414484153!5m2!1sen!2sus" width="100%%" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </p>
+        </div>
+    </div>
+</div>
+
+</div>
+
+          
+
+
+          
+      </div>
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header modal-h">
+        <h4 class="modal-title">ADD NEW SERVICE LOCATION</h4>
+        <button type="button" class="close white-c" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="col-md-12 ">
+            <div class="card">
+               
+                <div class="card-body">
+                   <div class="form-group">
+                     <label for="sname">Service Name</label>
+                     <input type="text"
+                       class="form-control" name="sname" id="sname" aria-describedby="helpId" placeholder="">
+                     
+                   </div>
+
+                  <div class="form-group">
+                     <label for="sLocation">Service Location</label>
+                     <input type="text"
+                       class="form-control" name="sLocation" id="sLocation" aria-describedby="helpId" placeholder="">
+                     
+                   </div>
+                   <div class="form-group">
+                    <label for="asset">Map URL</label>
+                    <input type="text"
+                      class="form-control" name="asset" id="asset" aria-describedby="helpId" placeholder="">
+                    <small id="helpId" class="form-text text-muted">Enter Map Url that describe Your Location e.g https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3420547623155!2d35.79969531464801!3d-6.218544662638076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184dfb0bcbd64cab%3A0x6f07a91fa266fdac!2sUniversity%20Of%20Dodoma%20(UDOM)!5e0!3m2!1sen!2sus!4v1578415318081!5m2!1sen!2sus</small>
+                  </div>
+                  <div class="form-group">
+                  
+                  </div>
+                </div>
+                
+            </div>
+          </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="submit" id="saveBtn" class="btn btn-primary float-right">Save</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+      <script id="template" type="x-tmpl-mustache">
+      {{#serviceArray}}
+        <div class="card">
+    
+        <div class="card-body">
+            <h4 class="card-title">{{sName}}</h4>
+            <p class="card-text">
+            <iframe src="{{mapUrl}}" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </p>
+        </div>
+    </div>
+      {{/serviceArray}}
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="resources/js/jquery-3.3.1.slim.min.js" ></script>
+    <script src="resources/js/popper.min.js" ></script>
+    <script src="resources/js/bootstrap.min.js" ></script>
+    <script src="resources/js/mustache.min.js" ></script>
+    <script src="https://unpkg.com/@aeternity/aepp-sdk/dist/aepp-sdk.browser-script.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
