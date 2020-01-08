@@ -1,60 +1,60 @@
 var contractSource = `
-contract DemocraticPartAsset=
+contract CityServiceContract=
 
-  record part = {
-         creatorAddress : address,
-         partName       : string,
-         assetName      : string
-             
-   }
-   
-   
+  record service = {
+         index               : int,
+         sAddress            : address,
+         sName               : string,
+         sLocation           : string,
+         mapUrl              : string
+         
+         }
+
   record state ={
-          parts : map(int, part),
-          totalPart :int
-    }
+          services : map(int, service),
+          sLength : int
+          }
   
   entrypoint init() = {
-        parts = {},
-        totalPart = 0 
-        
+        services = {},
+        sLength = 0 
         }
   
-  stateful entrypoint registerPart(name : string, asset : string) =
-        let part ={
-            creatorAddress = Call.caller,
-            partName       = name,
-            assetName      = asset
+  stateful entrypoint storeService(name : string, loc :string, url :string) =
+        let service ={
+            index       = sLength() +1,
+            sAddress = Call.caller,
+            sName       = name,
+            sLocation   = loc,
+            mapUrl      = url
+           
             }
         
-        let index = getTotalPart() +1
+        let index = sLength() +1
         
-        put( state { parts[index] = part, totalPart = index})
+        put( state { services[index] = service, sLength = index})
         
-        
-        
-        
-  entrypoint getPart(index :int ) :part =
-    state.parts[index]
+  entrypoint getService(index :int ) :service =
+    state.services[index]
     
     
-  entrypoint getTotalPart() : int =
-        state.totalPart
+  entrypoint sLength() : int =
+        state.sLength     
 `;
-var contractAddress= "ct_KcvgWcMfaMwNvg6ywqMpKAgVVArmjTxzf2KCW7gvCXGz392LB";
+var contractAddress= "ct_VYWVvsPfrK9RouL5HGEfjhbLWsgFhiPmnKKbMMcVrcdERyJaJ";
 
 var client =null;
 
 var serviceArray = [];
 var serviceLength =0;
 
-async function renderPart() {
+async function renderService() {
     var template=$('#template').html();
     Mustache.parse(template);
     var render = Mustache.render(template, {partArray});
     $('#service-lists').html(render);
     partTotal = await callStatic('sLength', [])
-    $('#total').html(partTotal);
+    $('#total').html(serviceLength);
 }
 
 async function callStatic(func,args){
@@ -90,34 +90,31 @@ window.addEventListener('load',async () =>{
             sOwner           : s.sAddress,
             sName            : s.sName,
             sMapUrl          : s.mapUrl,
-            photo            : s.photo
+          
         })
 
         
     }
 
-console.log(partArray);
 
-    renderPart();
+ renderService();
 
-$('#loader').hide();
+$('#loading').hide();
 });
 
 
 
 $(document).on('click','#saveBtn', async function(){
-    $('#loader').show();
-    const name = $('#name').val();
-    const asset = $('#asset').val();
+    $('#loading').show();
+    const name = $('#sName').val();
+    const sLocation = $('#sLocation').val();
+    const mapUrl = $('#mapUrl').val();
 
-    // partArray.push({
-    //     partName  : name,
-    //     assetName : asset
-    // })
 
-await contractCall('registerPart',[name, asset], 0);
-  renderPart();
 
-$('#loader').hide();
+await contractCall('storeService',[name, sLocation,mapUrl], 0);
+     renderService();
+
+$('#loading').hide();
 });
 
