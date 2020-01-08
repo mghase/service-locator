@@ -84,7 +84,7 @@ window.addEventListener('load',async () =>{
     serviceLength = await callStatic('sLength', []);
 
     for (let i = 1; i <= serviceLength; i++) {
-       const s = await callStatic('getSerice',[i]);
+       const s = await callStatic('getService',[i]);
 
         serviceArray.push({
             sOwner           : s.sAddress,
