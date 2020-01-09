@@ -1,5 +1,5 @@
 var contractSource = `
-contract CityServiceContract=
+contract ServiceLocatorContract=
 
   record service = {
          index               : int,
@@ -39,9 +39,9 @@ contract CityServiceContract=
     
     
   entrypoint sLength() : int =
-        state.sLength     
+        state.sLength       
 `;
-var contractAddress= "ct_VYWVvsPfrK9RouL5HGEfjhbLWsgFhiPmnKKbMMcVrcdERyJaJ";
+var contractAddress= "ct_pixUugVUCiQPJ2fSSGC2tprjGo7xBid9tkriPztfSjjW5CyWr";
 
 var client =null;
 
