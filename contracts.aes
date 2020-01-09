@@ -1,4 +1,4 @@
-contract CityServiceContract=
+contract ServiceLocatorContract=
 
   record service = {
          index               : int,
